@@ -34,10 +34,7 @@ class Solution:
             if headA==headB:
                 ans=headA
                 return ans
-                headA=headA.next
-                headB=headB.next
             else:
-                ans=0
                 headA=headA.next
                 headB=headB.next
         return 
