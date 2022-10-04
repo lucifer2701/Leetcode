@@ -1,2 +1,2 @@
-class Solution:
-    myPow=pow
+class Solution: myPow=pow
+        
