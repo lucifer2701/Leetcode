@@ -1,16 +1,13 @@
 class Solution:
     def myPow(self, x: float, n: int) -> float:
-        #O(logn) Time and O(1) space
-        if n<0:
-            x=1/x
-            n=-n
-        
-        ans,curr=1,x
-        
-        i=n
-        while i:
-            if i%2 ==1:
-                ans =ans * curr
-            curr=curr*curr
-            i=i//2
-        return ans
+        if x == 0:
+            return x
+        if n == 0:
+            return 1
+
+        if n < 0:
+            return self.myPow(1 / x, -n)
+        if not n % 2:
+            return self.myPow(x * x, n // 2)
+
+        return x * self.myPow(x * x, n // 2)    
