@@ -6,6 +6,7 @@
 #         self.right = right
 class Solution:
     def addOneRow(self, root: Optional[TreeNode], val: int, depth: int) -> Optional[TreeNode]:
+        #dummy taken bcoz level starts from 0 and we need to make it 1 by adding dummy above root
         dummy = TreeNode(0, root, None)
         if depth==0:    return root
         def dfs(node,depth):
