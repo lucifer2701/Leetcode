@@ -12,8 +12,9 @@ class Solution:
                 if le.val!=ri.val:
                     return 0
                 else:
-                    return sym(le.right,ri.left) and sym(le.left,ri.right)
+                    return sym(le.right,ri.left) and sym(le.left,ri.right) 
                 return 0
-        if not root:
-            return 1
+        if not root:    return 1
         return sym(root.left,root.right)
+        
+       
