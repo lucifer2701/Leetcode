@@ -6,22 +6,10 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        li=[]
-        if root is None:
-            return
-        return self.inorder(root,li)
-    
-    def inorder(self,root,li):
-        if root is None :
-            return
-        self.inorder(root.left,li)
-        li.append(root.val)
-        self.inorder(root.right,li)
-        return self.check(li)
-    def check(self,li):
-        y=len(li)
-        x=sorted(li)
-        z=set(li)
-        if y!=len(z):   return False 
-        if li==x:   return True
-        return False
+        def validate(node, minimum, maxmimum): #helper method -- check if our node 
+            if not node: #an empty tree is a valid BST!
+                return True
+            if not minimum < node.val < maxmimum: #if the node isn't in our valid range
+                return False #not a BST
+            return validate(node.left, minimum, node.val) and validate(node.right, node.val, maxmimum) #make sure the left and right subtrees are also valid
+        return validate(root, float('-inf'), float('inf')) #start with the root which can be any value
