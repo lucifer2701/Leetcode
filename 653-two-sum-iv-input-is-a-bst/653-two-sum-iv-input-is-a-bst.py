@@ -6,26 +6,22 @@
 #         self.right = right
 class Solution:
     def findTarget(self, root: Optional[TreeNode], k: int) -> bool:
+        res = False
+        diff = set()
         
-        def existAns(a , b , k):
-            if b==None:
-                return False
-            if a==b:
-                return existAns(a,b.left,k) or existAns(a,b.right,k)
-            if a.val + b.val == k:
-                return True
-            if a.val+b.val < k:
-                return existAns(a,b.right,k)
-            else:
-                return existAns(a,b.left,k)
-        
-        def traverse(root,head, k):
-            if (root==None):
-                return False
-            if existAns(root,head,k):
-                return True
-            return traverse(root.left,head, k) or traverse(root.right,head, k)
-        
-        return traverse(root,root,k)
+        def traverse(root):
+            nonlocal res, diff
             
-        
+            if not res:
+                if k - root.val in diff:
+                    res = True
+                
+                else:
+                    diff.add(root.val)
+                    if root.left:
+                        traverse(root.left)
+                    if root.right:
+                        traverse(root.right)
+                        
+        traverse(root)
+        return res
