@@ -1,4 +1,3 @@
-import itertools
 from collections import Counter
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -24,7 +23,7 @@ class Solution:
                     k-=1
                 else:
                     j+=1
-        ans=list(li for li,_ in itertools.groupby(li))
+        ans=li.copy()
         finalans=[]
         for i in range(len(ans)):
             if ans[i] not in finalans:
