@@ -1,14 +1,9 @@
-from collections import Counter
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
-        n=len(nums)
-        x=Counter(nums)
-        y=[0,1,2]
-        ans=[]
-        nums.clear()
-        for ele in y:
-            for i in range(x[ele]):
-                nums.append(ele)
+        p,q,r=nums.count(0),nums.count(1),nums.count(2)
+        nums[:p]=[0]*p
+        nums[p:p+q]=[1]*q
+        nums[p+q:p+q+r]=[2]*r        
