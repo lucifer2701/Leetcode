@@ -1,16 +1,34 @@
 class MyHashMap:
 
     def __init__(self):
-        self.HashMap=[-1]*1000001
+        self.hash_keys=[]
+        self.hash_values=[]
 
     def put(self, key: int, value: int) -> None:
-        self.HashMap[key]=value
+        if key in self.hash_keys:
+            j=self.hash_keys.index(key)
+            self.hash_values[j]=value
+        else:
+            self.hash_keys.append(key)
+            self.hash_values.append(value)
 
     def get(self, key: int) -> int:
-        return self.HashMap[key]
+        try:
+            j=self.hash_keys.index(key)
+            return self.hash_values[j]
+        except:
+            return -1
 
     def remove(self, key: int) -> None:
-        self.HashMap[key]=-1
+        try:
+            j=self.hash_keys.index(key)
+            self.hash_keys.pop(j)
+            self.hash_values.pop(j)
+        except:
+            pass
+        
+        
+        
 
 
 # Your MyHashMap object will be instantiated and called as such:
