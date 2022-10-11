@@ -6,7 +6,6 @@ class Solution:
         c2 = n -1
         
         res = [[0 for i in range(n)] for i in range(n)]
-        print(res)
         k = 1
         while(r1<=r2 and c1 <= c2):
             for i in range(r1,r2+1):
