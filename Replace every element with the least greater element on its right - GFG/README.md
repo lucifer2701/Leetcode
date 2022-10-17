@@ -1,5 +1,5 @@
 # Replace every element with the least greater element on its right
-## Hard
+## Medium
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given an array <strong>arr[]</strong> of <strong>N</strong> integers and replace every element with the least greater element on its right side in the array. If there are no greater elements on the right side, replace it with <strong>-1.</strong>&nbsp;</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
