@@ -3,7 +3,6 @@ class Solution:
         temp=dict()
         x=len(s)
         ans=[]
-        if x<=10:   return ans
         for i in range(x-9):
             if s[i:i+10] in temp:
                 temp[s[i:i+10]]+=1
