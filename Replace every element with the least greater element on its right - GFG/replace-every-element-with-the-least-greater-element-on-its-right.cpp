@@ -9,20 +9,38 @@ using namespace std;
 
 class Solution{
     public:
-    vector<int> findLeastGreater(vector<int>&v, int n) {
-        set<int>record;
-        record.insert(v[n-1]);
-        vector<int>res(1,-1);
-        for(int i=n-2;i>=0;i--){
-            record.insert(v[i]);
-            auto up=record.upper_bound(v[i]);
-            if(up==record.end())
-                res.push_back(-1);
+    vector<int> findLeastGreater(vector<int>& arr, int n) {
+
+        set<int> st;
+
+        vector<int> ans;
+
+        for(int i=n-1; i>=0; i--){
+
+            int key = arr[i];
+
+            auto it = st.upper_bound(key);
+
+            if(it==st.end())
+
+            ans.push_back(-1);
+
             else
-                res.push_back(*up);
+
+            ans.push_back(*it);
+
+            
+
+            st.insert(key);
+
+            
+
         }
-        reverse(res.begin(),res.end());
-        return res;
+
+        reverse(ans.begin(),ans.end());
+
+        return ans;
+
     }
 };
 
