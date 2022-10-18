@@ -23,8 +23,7 @@ class Solution:
             sx1+=str(x1[i])
         for i in range(len(x2)):
             sx2+=str(x2[i])
-        s=int(sx1)+int(sx2)
-        s=str(s)
+        s=str(int(sx1)+int(sx2))
         for i in range(len(s)):
             lis.append(int(s[i]))
         lis.reverse()
