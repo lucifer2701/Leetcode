@@ -17,12 +17,9 @@ class Solution:
         i=0
         while temp!=None:
             if i%2==0:
-                temp.val=li[0]
-                li.pop(0)
+                temp.val=li.pop(0)
             else:
-                temp.val=li[-1]
-                li.pop()
+                temp.val=li.pop()
             temp=temp.next
             i+=1
-        
         
