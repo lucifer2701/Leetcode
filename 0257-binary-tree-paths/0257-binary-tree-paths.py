@@ -9,7 +9,7 @@ class Solution:
         ans=[]
         def back(node,s=None):
             if not node:    return
-            if not s or s==None:
+            if not s:
                 s=str(node.val)
             else:
                 s+='->'+str(node.val)
