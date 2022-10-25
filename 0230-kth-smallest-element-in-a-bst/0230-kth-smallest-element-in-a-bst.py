@@ -9,9 +9,8 @@ class Solution:
         li=[]
         def trav(node,li):
             if not node:    return
-            li.append(node.val)
             trav(node.left,li)
+            li.append(node.val)
             trav(node.right,li)
         trav(root,li)
-        li.sort()
         return li[k-1]
