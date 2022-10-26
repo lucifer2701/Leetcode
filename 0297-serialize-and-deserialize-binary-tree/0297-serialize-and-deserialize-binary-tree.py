@@ -17,7 +17,7 @@ class Codec:
         def dfs(d_list):
             x=d_list.pop(0)
             if x=='null':    return None
-            node=TreeNode(int(x))
+            node=TreeNode(x)
             node.left=dfs(d_list)
             node.right=dfs(d_list)
             return node
