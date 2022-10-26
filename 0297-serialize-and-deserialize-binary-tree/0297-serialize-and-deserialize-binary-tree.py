@@ -15,9 +15,9 @@ class Codec:
     def deserialize(self, data):
         data=list(data.split(','))
         def dfs(d_list):
-            x=d_list.pop(0)
-            if x=='null':    return None
-            node=TreeNode(int(x))
+            node=d_list.pop(0)
+            if node=='null':    return None
+            node=TreeNode(node)
             node.left=dfs(d_list)
             node.right=dfs(d_list)
             return node
