@@ -11,20 +11,20 @@ class Codec:
         if not root:
             return 'null'
         return str(root.val)+','+str(self.serialize(root.left))+','+str(self.serialize(root.right))
-        
+
     def deserialize(self, data):
         data=list(data.split(','))
-        def dfs(data_list):
-            root=data_list.pop(0)
-            if root=='null':
-                return None
-            root=TreeNode(int(root))
-            root.left=dfs(data_list)
-            root.right=dfs(data_list)
-            return root
+        def dfs(d_list):
+            x=d_list.pop(0)
+            if x=='null':    return None
+            node=TreeNode(int(x))
+            node.left=dfs(d_list)
+            node.right=dfs(d_list)
+            return node
         return dfs(data)
-       
+            
         
+
 # Your Codec object will be instantiated and called as such:
 # ser = Codec()
 # deser = Codec()
