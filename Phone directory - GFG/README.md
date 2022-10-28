@@ -38,6 +38,7 @@ Youd do not need to read input or print anything. Your task is to complete the f
 <strong>Expected Auxiliary Space:</strong> O(n * max|contact[i]|)</span></p>
 
 <p><span style="font-size:18px"><strong>Constraints:</strong><br>
+1 ≤ T&nbsp;≤ 100, T = number of test cases<br>
 1 ≤&nbsp;n ≤&nbsp;50<br>
 1 ≤ |contact[i]| ≤&nbsp;50<br>
 1 ≤&nbsp;|s| ≤&nbsp;6&nbsp;</span></p>
