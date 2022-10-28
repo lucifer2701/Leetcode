@@ -1,4 +1,4 @@
-
+#User function Template for python3
 class Solution:
     def displayContacts(self, n, contact, s):
         # code here
@@ -15,7 +15,6 @@ class Solution:
             if len(ans)==0: ans.append(0)
             finalans.append(ans)
         return finalans
-
 
 #{ 
  # Driver Code Starts
