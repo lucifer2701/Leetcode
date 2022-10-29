@@ -6,11 +6,9 @@ class Solution:
             if x not in d:
                 d[x]=[]
             d[x].append(ele)
-        z=[d[x] for x,_ in sorted(d.items())]
         ans=[]
-        i=0
-        while k>0:            
-            ans+=z[i][:k]
-            k-=len(z[i])
-            i+=1
+        for i in sorted(d.keys()):
+            z=d[i]
+            ans.extend(z[:k])
+            k-=len(d[i])
         return ans
