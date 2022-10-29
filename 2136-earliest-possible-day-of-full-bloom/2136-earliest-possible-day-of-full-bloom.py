@@ -3,5 +3,4 @@ class Solution:
         ans = 0                                     
         for g,p in sorted(zip(growTime,plantTime)): 
             ans = g + p if g >= ans else ans + p    
-        return ans                                  
-                    
+        return ans    
