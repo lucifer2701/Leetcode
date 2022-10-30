@@ -3,12 +3,9 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        x=len(nums)
-        t=nums.copy()
-        nums.clear()
-        if x-k >= 0:
-            t=t[x-k:]+t[:x-k]
-        else:
-            p=x-(k%x)
-            t=t[p:]+t[:p]
-        nums.extend(t)
+        x=len(nums)-1
+        for i in range(k):
+            t=nums.pop()
+            nums.insert(0,t)
+        
+        
