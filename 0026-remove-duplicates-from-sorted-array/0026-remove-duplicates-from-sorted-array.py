@@ -5,5 +5,5 @@ class Solution:
 	        if(nums[i]!=nums[i+1]):
 		        nums[x] = nums[i+1]
 		        x+=1
-        return(x)
+        return x
         
