@@ -1,11 +1,9 @@
-#User function Template for python3
-from collections import Counter
+
 class Solution:
     def beautySum(self, s):
         # Code here
         ans=0
         for i in range(len(s)):
-            subStr = ""
             d={}
             for j in range(i,len(s)):
                 if s[j] in d:
