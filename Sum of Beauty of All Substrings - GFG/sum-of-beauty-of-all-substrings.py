@@ -7,16 +7,12 @@ class Solution:
         for i in range(len(s)):
             subStr = ""
             d={}
-            mf=0;lf=0
             for j in range(i,len(s)):
                 if s[j] in d:
                     d[s[j]]+=1
-                    mf=max(mf,d[s[j]])
-                    lf=min(lf,d[s[j]])
                 else:
                     d[s[j]]=1
-                    mf=max(1,mf)
-                    lf=1
+                mf=max(d.values())
                 lf=min(d.values())
                 ans+=(mf-lf)
         return ans
