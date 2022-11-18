@@ -30,8 +30,6 @@ class Solution:
                 ddfs(node.right,level+1)
         dfs(node1,0)
         ddfs(node2,0)
-        if len(ans1)!=len(ans2):
-            return 0
         for i in range(len(ans1)):
             if ans1[i]!=ans2[i][::-1]:
                 return 0
