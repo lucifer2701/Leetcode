@@ -33,8 +33,7 @@ class Solution:
         if len(ans1)!=len(ans2):
             return 0
         for i in range(len(ans1)):
-            ans2[i].reverse()
-            if ans1[i]!=ans2[i]:
+            if ans1[i]!=ans2[i][::-1]:
                 return 0
         return 1
         
