@@ -5,7 +5,6 @@ class Solution:
     def rearrange(self,arr, n): 
         ##Your code here
         temp=arr.copy()
-        temp.sort()
         x=0;y=n-1
         for i in range(n):
             if i%2==0:
