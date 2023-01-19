@@ -1,6 +1,7 @@
 #User function Template for python3
 
-def sumElement(arr,n):  return sum(arr)
+def sumElement(arr,n):
+    return sum(arr)
 
 #{ 
  # Driver Code Starts
