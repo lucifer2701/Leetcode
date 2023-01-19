@@ -3,7 +3,8 @@
 class Solution:
 
 	
-	def seriesSum(self,n):  return n*(n+1)//2
+	def seriesSum(self,n):  
+	    return n*(n+1)//2
 	    
 
 
