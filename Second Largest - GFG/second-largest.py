@@ -8,7 +8,8 @@ class Solution:
 		arr.remove(maxi)
 		if len(arr)==0:
 		    return -1
-		return max(arr)
+		else :
+		    return max(arr)
 
 
 #{ 
