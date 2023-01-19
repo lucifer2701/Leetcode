@@ -4,13 +4,11 @@ class Solution:
 	def print2largest(self,arr, n):
 		# code here
 		arr=set(arr)
-		arr=list(arr)
-		arr.sort()
-		n=len(arr)
-		if n<2:
+		maxi=max(arr)
+		arr.remove(maxi)
+		if len(arr)==0:
 		    return -1
-		return arr[n-2]
-		
+		return max(arr)
 
 
 #{ 
