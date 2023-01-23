@@ -1,13 +1,8 @@
 #User function Template for python3
-
+from collections import Counter
 class Solution:
     def findSingle(self, N, arr):
-        d={}
-        for ele in arr:
-            if ele not in d:
-                d[ele]=1
-            else:
-                d[ele]+=1
+        d=Counter(arr)
         for ele in d:
             if d[ele]%2==1:
                 return ele
