@@ -3,30 +3,20 @@
 class Solution:
     def maxTripletProduct (self, arr,  n): 
         #Complete the function
-        mx1=max(arr);arr.remove(mx1)
-        mx2=max(arr);arr.remove(mx2)
-        mx3=max(arr);arr.remove(mx3)
-        if len(arr)==0:
-            return mx1*mx2*mx3
-        if len(arr)>0:
-            mi1=min(arr)
-            arr.remove(mi1)
-        else:
-            mi1=mx3
-        if len(arr)>0:
-            mi2=min(arr)
-            arr.remove(mi2)
-        else:
-            mi2=mx3
-        ans=1
-        if mx1<0:
-            ans=mx1*mx2*mx3
-        elif mx2*mx3<mi1*mi2:
-            ans=mx1*mi1*mi2
-        else:
-            ans=mx1*mx2*mx3
-        return ans
-
+        mx1,mx2,mx3=float('-inf'),float('-inf'),float('-inf')
+        mi1,mi2=float('inf'),float('inf')
+        for i in arr:
+            if i>mx1:
+                mx3,mx2,mx1=mx2,mx1,i
+            elif i>mx2:
+                mx3,mx2=mx2,i
+            elif i>mx3:
+                mx3=i
+            if i<mi1:
+                mi2,mi1=mi1,i
+            elif i<mi2:
+                mi2=i
+        return max(mx1*mx2*mx3,mx1*mi1*mi2)
 
 
 #{ 
