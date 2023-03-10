@@ -3,12 +3,21 @@
 class Solution:
     def maxTripletProduct (self, arr,  n): 
         #Complete the function
-        arr.sort()
-        mx1=arr[-1]
-        mx2=arr[-2]
-        mx3=arr[-3]
-        mi1=arr[0]
-        mi2=arr[1]
+        mx1=max(arr);arr.remove(mx1)
+        mx2=max(arr);arr.remove(mx2)
+        mx3=max(arr);arr.remove(mx3)
+        if len(arr)==0:
+            return mx1*mx2*mx3
+        if len(arr)>0:
+            mi1=min(arr)
+            arr.remove(mi1)
+        else:
+            mi1=mx3
+        if len(arr)>0:
+            mi2=min(arr)
+            arr.remove(mi2)
+        else:
+            mi2=mx3
         ans=1
         if mx1<0:
             ans=mx1*mx2*mx3
