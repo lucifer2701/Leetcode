@@ -5,11 +5,16 @@ class Solution:
     def minimumInteger(self, N : int, A : List[int]) -> int:
         # code here
         s=sum(A)
-        A.sort()
+        if s%N==0:
+            ans= s//N
+        else:
+            ans= 1+s//N
+        res=float('inf')
         for i in A:
-            if s<=N*i:
-                return i
-                
+            if i>=ans:
+                res=min(res,i)
+        return res
+    
 
 
 #{ 
