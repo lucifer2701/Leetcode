@@ -7,7 +7,7 @@ class Solution:
         suma = 0
         s+="A"
         
-        for i in range(len(s[:-1])):
+        for i in range(len(s)-1):
             if s[i]=="M":
                 suma+=1000
                 
